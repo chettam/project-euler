@@ -1,14 +1,14 @@
 # calculate fibonacci terms in ruby
-
-n_1 = 1
-n_2 = 2
-n=0
-until n > 4000000
-	n = n_1+n_2
- 	puts n
- 	# moving viariable
- 	n_2 = n
- 	n_1 = n_2 
+def fib(n)
+	return 0 if n == 1
+	return 1 if n == 2
+	fib(n-1) + fib(n-2)
 end
 
-
+n = 1
+fibonacci = fib(n)
+while fibonacci < 4_000_000
+	n += 1
+	puts fibonacci
+	fibonacci = fib(n)
+end
